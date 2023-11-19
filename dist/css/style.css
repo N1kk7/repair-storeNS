@@ -1,0 +1,1550 @@
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.title-wrapper {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stepper-item {
+  position: relative;
+  cursor: not-allowed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+.stepper-item .arrow-counter {
+  display: none;
+}
+@media (max-width: 768px) {
+  .stepper-item {
+    font-size: 12px;
+  }
+}
+.stepper-item .back-button {
+  position: absolute;
+  top: 5px;
+  border-radius: 50%;
+  z-index: 0;
+  background-color: rgb(34, 148, 39);
+}
+.stepper-item .back-button .left-arrow {
+  width: 2vw;
+  height: 17px;
+  transform: rotate(180deg);
+}
+
+.completed .back-button {
+  z-index: 10;
+}
+
+.stepper-item::before {
+  position: absolute;
+  content: "";
+  border-bottom: 9px solid #EBEBEB;
+  width: 100%;
+  top: 15px;
+  left: -50%;
+  z-index: 2;
+}
+
+.stepper-item::after {
+  position: absolute;
+  content: "";
+  border-bottom: 9px solid #D9D9D9;
+  width: 10%;
+  top: 17px;
+  left: 50%;
+  z-index: 3;
+}
+
+.stepper-item .step-counter,
+.stepper-item .arrow-counter {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: #D9D9D9;
+  margin-bottom: 6px;
+}
+
+.stepper-item.active {
+  font-weight: bold;
+}
+
+.stepper-item.completed .step-counter,
+.stepper-item.completed .arrow-counter {
+  background-color: #229427;
+}
+
+.stepper-item.completed::after {
+  transition: all ease 1s;
+  position: absolute;
+  content: "";
+  border-bottom: 9px solid #229427;
+  width: 100%;
+  height: 9px;
+  top: 17px;
+  left: 50%;
+  z-index: 3;
+}
+
+.stepper-item .step-counter {
+  color: #FFFFFF;
+  font-size: 14px;
+}
+.stepper-item .step-name {
+  font-family: "Open Sans";
+  position: relative;
+  top: 15px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #757575;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.step-active .step-counter {
+  background-color: #229427;
+}
+.step-active .step-name {
+  color: #229427;
+  font-family: "Open Sans";
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.completed {
+  cursor: pointer;
+}
+.completed .step-name {
+  color: #229427;
+}
+
+.stepper-item:first-child::before {
+  content: none;
+}
+
+.stepper-item:last-child::after {
+  content: none;
+}
+
+.widget-wrapper .widget-stepper {
+  width: 100vw;
+}
+.widget-wrapper .widget-stepper .widget-stepper-wrapper {
+  overflow: auto;
+  margin: 10vh auto 5vh;
+  width: 947px;
+  height: fit-content;
+  position: relative;
+  border: 1px solid #E8E8ED;
+  border-radius: 1.3vw;
+}
+.widget-wrapper .stepper-hidden {
+  display: none !important;
+}
+.widget-wrapper .title-wrapper {
+  border-bottom: 1px solid #E8E8ED;
+  display: flex;
+  align-items: center;
+  padding: 65px 60px 53px;
+}
+.widget-wrapper .typeWrapper {
+  padding: 82px 47px 20px;
+  overflow: hidden;
+}
+.widget-wrapper .typeWrapper .animated-block {
+  overscroll-behavior: none;
+  -webkit-animation-duration: 0.7s;
+  animation-name: slidein;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+}
+.widget-wrapper .typeWrapper .container {
+  overflow: hidden;
+  left: 50%;
+  position: relative;
+  transform: translate(-50%, 0%);
+}
+.widget-wrapper .typeWrapper .container .hidden-row-wrapper {
+  max-height: 225px;
+  padding-right: 2vw;
+  height: 28vh;
+  margin-bottom: 2.5vh;
+}
+.widget-wrapper .typeWrapper .container .hidden-row-wrapper .hidden-row {
+  max-height: 35vh;
+  overflow: auto;
+}
+.widget-wrapper .typeWrapper .container .row {
+  position: relative;
+  left: 0%;
+}
+.widget-wrapper .typeWrapper .container .row .item-card {
+  border: 1px solid #E8E8ED !important;
+  box-shadow: 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .col-name {
+  padding: 0 7px;
+  white-space: nowrap;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .col-name span {
+  color: #000;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .form-quote {
+  padding-top: 2vh;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .form-quote .row .message-form {
+  height: 166px;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .form-quote .row .form-control {
+  margin-bottom: 2vh;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .details {
+  padding: 28px 25px 35px;
+  margin-right: 1vw;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .details .device-img img {
+  width: 147px;
+  padding: 1vw;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .details .device-name {
+  width: 160px;
+  color: #000;
+  font-family: Open Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .details .store {
+  width: 45%;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper {
+  min-width: 330px;
+  width: 25vw;
+  border: 1px solid #E8E8ED;
+  border-radius: 5px;
+  padding: 14px 29px;
+  box-shadow: 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
+}
+.widget-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-img img {
+  width: 100%;
+  object-fit: fill;
+  min-width: 10vw;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-details {
+  position: relative;
+  left: 0.8vw;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-details .store-zip {
+  width: 12vw;
+  font-size: 12px;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-details .btn {
+  border-radius: 3px;
+  background: #F60;
+  padding: 6px 25px;
+  justify-content: center;
+  color: #FFF;
+  align-items: center;
+  box-shadow: 0px 8px 11px 0px rgba(255, 102, 0, 0.26);
+}
+.widget-wrapper .typeWrapper .container .row .item-card .problem .problem-card {
+  width: 30%;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .problem .problem-card .problem-type {
+  display: flex;
+  align-items: center;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .problem .problem-card .problem-type img {
+  width: 3.5vw;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .problem .problem-card .problem-type span {
+  color: #000;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .problem .problem-card .col-name {
+  font-size: 1.2vw;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .option h5 {
+  color: #000;
+  font-family: Open Sans;
+  font-size: 1.1vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .option span {
+  color: #000;
+  font-family: Open Sans;
+  font-size: 1.1vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .quote-delivery-title {
+  padding: 20px 0 15px;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .quote-delivery-title h6 {
+  color: #000;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .radio {
+  padding: 0 29px 15px;
+  color: #000;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 18.2px */
+  cursor: pointer;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .radio input {
+  display: none;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .radio label {
+  display: flex;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .radio .radio-btn {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #E2E2E2;
+  align-items: center;
+  margin-right: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .radio .radio-btn span {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 6px;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .radio input:checked + .radio-btn {
+  border: 1px solid #F60;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .radio input:checked + .radio-btn span {
+  background-color: #F60;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .form-quote label {
+  color: #000;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .form-quote .form-control::placeholder {
+  color: #D1D3DD;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 18.2px */
+}
+.widget-wrapper .typeWrapper .container .row .item-card .checkbox {
+  display: flex;
+  align-items: center;
+  width: -webkit-fill-available;
+  padding: 1vh;
+  cursor: pointer;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .checkbox input {
+  display: none;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .checkbox .checkmark {
+  display: inline-block;
+  border-radius: 3px;
+  border: 1px solid #E2E2E2;
+  width: 20px;
+  height: 20px;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .checkbox input:checked + .checkmark {
+  background-color: #F60;
+  background-image: url(../../assets/images/checkmark.svg);
+  background-size: 10px 10px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .map-title span {
+  color: #000;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .input-zip-code {
+  padding-left: 3vw;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .input-zip-code input {
+  width: 14vw;
+  padding: 14.5px 14.5px 17px;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid #E2E2E2;
+  color: #F60;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 18.2px */
+}
+.widget-wrapper .typeWrapper .container .row .item-card .input-zip-code input:placeholder {
+  color: #D1D3DD;
+}
+.widget-wrapper .typeWrapper .container .row .item-card .change-list-map span {
+  color: #000;
+  font-family: Open Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
+}
+.widget-wrapper .typeWrapper .container .row .input-list-wrapper {
+  box-shadow: unset;
+  border: none !important;
+}
+.widget-wrapper .typeWrapper .container .row .input-list-wrapper .zip-code {
+  text-align: start;
+}
+.widget-wrapper .typeWrapper .container .row .item-card-active {
+  border: 1px solid #F60 !important;
+}
+.widget-wrapper .typeWrapper .container .row .button .btn {
+  background-color: #D9D9D9;
+  border: unset;
+  padding: 12px 32px;
+  position: relative;
+  top: 17px;
+  box-shadow: 0px 8px 11px 0px rgba(217, 217, 217, 0.26);
+}
+.widget-wrapper .typeWrapper .container .row .button .btn button {
+  display: flex;
+  width: 153px;
+  height: 47px;
+  padding: 12px 28px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  border: 1px solid #F60;
+  background: #F60;
+}
+.widget-wrapper .typeWrapper .container .row .button .active-btn {
+  background-color: #F60;
+  box-shadow: 0px 8px 11px 0px rgba(255, 102, 0, 0.26);
+  color: #FFF;
+}
+.widget-wrapper .typeWrapper .container .row .button-map {
+  margin: 15px 0 25px;
+}
+.widget-wrapper .typeWrapper .container .quote-information {
+  padding: 36px 0 27px;
+}
+.widget-wrapper .typeWrapper .container .quote-information h3 {
+  color: #000;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.widget-wrapper .typeWrapper .list-map {
+  padding: 3vh !important;
+}
+.widget-wrapper .typeWrapper .list-map .store-img {
+  width: -webkit-fill-available;
+}
+.widget-wrapper .typeWrapper .list-map .store-img img {
+  width: inherit;
+}
+.widget-wrapper .typeWrapper .list-map .store-name {
+  padding-top: 2vh;
+}
+.widget-wrapper .typeWrapper .list-map .store-name h5 {
+  color: #000;
+  font-family: Open Sans;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.widget-wrapper .typeWrapper .list-map .store-zip {
+  color: #000;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0 1vw;
+}
+.widget-wrapper .typeWrapper .list-map-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 41px;
+  padding: 5px 2px;
+  border-radius: 4px;
+  border: 1px solid #E2E2E2;
+}
+.widget-wrapper .type-problem {
+  padding: 45px 47px 0px;
+}
+.widget-wrapper .type-map {
+  padding: 30px 47px 10px;
+}
+.widget-wrapper .type-form {
+  padding: 55px 47px 35px;
+}
+.widget-wrapper .book-appointment {
+  margin: 0 auto;
+  width: 947px;
+  position: relative;
+  top: 10vh;
+  border: 1px solid #E8E8ED;
+  border-radius: 1.3vw;
+}
+.widget-wrapper .book-appointment .typeWrapper {
+  padding: 16px 26px 20px;
+}
+.widget-wrapper .book-appointment .typeWrapper .selected-store-tittle h4 {
+  color: #000;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-store {
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #E8E8ED;
+  width: 189px;
+  height: 250px;
+  background: #FFF;
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-store .selected-store .store-name {
+  padding-top: 10px;
+  color: #000;
+  font-family: Open Sans;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-store .selected-store .store-zip {
+  padding-top: 5px;
+  color: #000;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-store .selected-store .store-zip p {
+  margin-bottom: auto;
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-store .selected-store .change-appointment-btn button {
+  display: flex;
+  width: 153px;
+  height: 47px;
+  padding: 12px 28px;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  border-radius: 3px;
+  border: 1px solid #F60;
+  background: #F60;
+  box-shadow: 0px 8px 11px 0px rgba(255, 102, 0, 0.26);
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-date {
+  width: 628px;
+  border-radius: 8.019px;
+  border: 0.969px solid #E6E6E6;
+  background: #FFF;
+  padding: 20px;
+  margin: 0 auto;
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-date .calendar .zabuto-calendar {
+  width: 300px;
+  height: 300px;
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-date .calendar .zabuto-calendar .left-btn, .widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-date .calendar .zabuto-calendar .right-btn {
+  border-radius: 3.875px;
+  border: 0.969px solid #E8E8ED;
+  flex-shrink: 0;
+  padding: 9px 12px;
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-date .calendar .zabuto-calendar .zabuto-calendar__navigation__item--header__title {
+  color: #222B45;
+  font-family: Open Sans;
+  font-size: 16.038px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-date .calendar .zabuto-calendar .zabuto-calendar__days-of-week__item {
+  padding-top: 22px;
+  padding-bottom: 22px;
+  color: #000;
+  font-family: Open Sans;
+  font-size: 14.53px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12.83px; /* 88.302% */
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-date .calendar .zabuto-calendar .zabuto-calendar__day {
+  width: 35px;
+  height: 35px;
+  color: #ABABAB;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 14.53px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.038px; /* 110.377% */
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-date .calendar .zabuto-calendar .zabuto-calendar__day--today span {
+  background-color: unset !important;
+  color: #000;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16.038px; /* 110.377% */
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-date .calendar .zabuto-calendar .click-day {
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
+  color: #F60;
+  font-size: 14.53px;
+  font-style: normal;
+  font-weight: 700;
+  background: #FFE7D7;
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-date .time-of-appointment .title h6 {
+  color: #222B45;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 16.038px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+  padding-bottom: 25px;
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-date .time-of-appointment .time-wrapper {
+  width: 258px;
+  border-radius: 8.019px;
+  border: 0.969px solid #E6E6E6;
+  padding: 10px 8px;
+  background: #FFF;
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-date .time-of-appointment .time-wrapper .time {
+  width: 100%;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-date .time-of-appointment .time-wrapper .time input {
+  display: none;
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-date .time-of-appointment .time-wrapper .time span {
+  color: #ABABAB;
+  border-radius: 3px;
+  border: 1px solid #E6E6E6;
+  font-family: Open Sans;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  width: 100%;
+}
+.widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-date .time-of-appointment .time-wrapper .time input:checked + span {
+  border: 1px solid #E6E6E6;
+  background: #F60;
+  color: #FFF;
+}
+.widget-wrapper .book-appointment .book-appointment-btn {
+  padding: 0 28px 43px;
+}
+.widget-wrapper .book-appointment .book-appointment-btn .no-btn {
+  margin: 0 21px;
+  padding: 5px 28px;
+  border-radius: 3px;
+  background: #F5F5F7;
+}
+.widget-wrapper .book-appointment .book-appointment-btn .appointment-btn {
+  border-radius: 3px;
+  background: #D9d9d9;
+  box-shadow: 0px 8px 11px 0px rgba(217, 217, 217, 0.26);
+}
+.widget-wrapper .book-appointment .book-appointment-btn .appointment-btn .btn {
+  cursor: not-allowed;
+  width: 100%;
+  height: 100%;
+  color: #FFF;
+  font-family: Open Sans;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.widget-wrapper .book-appointment .book-appointment-btn .active-appointment-btn {
+  background: #F60;
+  box-shadow: 0px 8px 11px 0px rgba(255, 102, 0, 0.26);
+}
+.widget-wrapper .book-appointment .book-appointment-btn .active-appointment-btn .btn {
+  cursor: pointer;
+}
+.widget-wrapper .success-block {
+  width: 100vw;
+  height: 100vh;
+}
+.widget-wrapper .success-block .success-block-wrapper {
+  width: 707px;
+  display: inherit;
+  padding: 56px 0 40px;
+  border-radius: 15px;
+  background: #FFF;
+  margin: 0 auto;
+  box-shadow: 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
+}
+.widget-wrapper .success-block .success-block-wrapper .success-title h1 {
+  padding-top: 22px;
+  color: #000;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: #229427;
+}
+.widget-wrapper .success-block .success-block-wrapper .message {
+  width: 285px;
+  color: #000;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.widget-wrapper .success-block .success-block-wrapper .appointment-details h4 {
+  color: #000;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.widget-wrapper .success-block .success-block-wrapper .date h3 {
+  color: #000;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 22.04px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.widget-wrapper .success-block .success-block-wrapper .store-detail .loc {
+  color: #000;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.widget-wrapper .success-block .success-block-wrapper .store-detail .store-img img {
+  width: 112px;
+}
+.widget-wrapper .success-block .success-block-wrapper .store-detail .store-name h4 {
+  color: #000;
+  font-family: Open Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.widget-wrapper .success-block .success-block-wrapper .store-detail .store-zip p {
+  width: 176px;
+  color: #000;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.widget-wrapper .type-wrapper-hidden {
+  display: none;
+}
+.widget-wrapper .appointment-hidden {
+  display: none;
+}
+.widget-wrapper .success-hidden {
+  display: none !important;
+}
+.widget-wrapper .hidden {
+  display: none !important;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 80vw;
+    width: 300%;
+  }
+  to {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .widget-wrapper .widget-stepper-wrapper {
+    max-width: 85vw;
+    margin-top: 7vh;
+    margin-bottom: 5vh;
+  }
+  .widget-wrapper .widget-stepper-wrapper .title-wrapper {
+    padding: 5vh 0;
+  }
+  .widget-wrapper .widget-stepper-wrapper .title-wrapper .step-name {
+    white-space: nowrap;
+    font-size: 1.8vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper {
+    padding: 7vh 2vw 1vh;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .hidden-row-wrapper {
+    height: 45vh;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .hidden-row-wrapper .hidden-row {
+    max-height: 50vh;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details .device-img img {
+    width: 15vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details .device-name {
+    width: 12vw !important;
+    font-size: 2.5vw;
+    padding-right: 2vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details .store-wrapper .store .store-img img {
+    width: 125px;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .zip-code .input-zip-code {
+    padding: 2vh 0;
+    padding-left: 0vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .zip-code .input-zip-code input {
+    width: 27vw !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .col-name span {
+    font-size: 13px;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .list-map-btn img {
+    width: 2vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .type-map, .widget-wrapper .widget-stepper-wrapper .type-form {
+    padding: 2vh 2vw 1vh;
+  }
+  .widget-wrapper .widget-stepper-wrapper .button button {
+    padding: 8px 24px;
+  }
+  .widget-wrapper .book-appointment {
+    width: 95vw !important;
+    margin: 0 auto 20vh !important;
+  }
+  .widget-wrapper .book-appointment .title-wrapper {
+    padding: 4vh 2vw;
+  }
+  .widget-wrapper .book-appointment .title-wrapper .tittle h2 {
+    font-size: 3vw;
+  }
+  .widget-wrapper .book-appointment .type-appointment {
+    padding: 3vh 2vw;
+  }
+  .widget-wrapper .book-appointment .type-appointment .appointment-date {
+    width: 60vw;
+    justify-content: space-evenly;
+    padding: 2vh 0;
+  }
+  .widget-wrapper .book-appointment .type-appointment .appointment-date .calendar .zabuto-calendar {
+    width: 25vw;
+    height: 40vh;
+  }
+  .widget-wrapper .book-appointment .type-appointment .time-of-appointment .time-wrapper {
+    width: 25vw;
+  }
+  .widget-wrapper .book-appointment .book-appointment-btn .no-btn {
+    padding: 0 2vw;
+  }
+  .widget-wrapper .success-block .success-block-wrapper {
+    width: 85vw !important;
+  }
+  .widget-wrapper .typeWrapper .container .row .input-list-wrapper .zip-code .map-title span {
+    font-size: 1.7vw;
+  }
+}
+@media screen and (max-width: 955px) {
+  .appointment-details {
+    flex-direction: column-reverse;
+  }
+  .appointment-details .appointment-date {
+    width: 85vw !important;
+  }
+  .appointment-details .appointment-store {
+    margin: 3vh 0;
+    width: auto !important;
+    height: unset !important;
+  }
+  .appointment-details .appointment-store .selected-store {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: inherit;
+  }
+  .appointment-details .appointment-store .selected-store .store-zip p {
+    width: 20vw;
+  }
+  .widget-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-details .store-zip {
+    width: 18vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .animated-block {
+    animation-duration: 0.3s !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper {
+    width: 90vw !important;
+    max-width: unset !important;
+    margin: 7vh auto 5vh !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .back-button {
+    top: 8px;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper {
+    padding: 20px 2vw 0;
+    min-height: fit-content;
+    overflow: visible;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .hidden-row {
+    max-height: unset !important;
+    height: fit-content;
+    overflow: visible;
+    padding-right: 1vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container {
+    height: auto;
+    overflow-y: visible;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card {
+    min-width: max-content;
+    position: relative;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .col-name {
+    padding: 0 5vw 0 5px;
+    min-width: 20vw;
+    text-align: start;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .checkbox {
+    padding: 1vh 4vw !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .zip-code {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .details {
+    flex-direction: column-reverse;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .details .device {
+    padding: 3vh 0;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .details .device .device-wrapper {
+    justify-content: space-evenly;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .details .store {
+    width: unset !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .details .store .store-wrapper {
+    justify-content: space-around;
+    width: unset !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .problem .problem-wrapper {
+    flex-direction: column;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .problem .problem-wrapper .problem-card {
+    width: unset !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .problem .problem-wrapper .problem-card .item-card {
+    flex-direction: unset !important;
+    justify-content: center;
+    min-width: unset;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .problem .problem-wrapper .problem-card .item-card .problem-type .col-img {
+    display: inline-block;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .problem .problem-wrapper .problem-card .item-card .problem-type .col-img img {
+    width: 10vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .problem .problem-wrapper .problem-card .item-card .problem-type .col-name {
+    display: inline-block;
+    padding-left: 1vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .problem .problem-wrapper .problem-card .item-card .problem-type .col-name span {
+    font-size: 2vw;
+    white-space: nowrap;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .problem .problem-wrapper .problem-card .item-card .option {
+    text-align: center;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .problem .problem-wrapper .problem-card .item-card .option h5 {
+    font-size: 1.8vw;
+    display: block;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .problem .problem-wrapper .problem-card .item-card .option span {
+    display: block;
+    font-size: 1.8vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .radio {
+    padding: 0 2vw 10px !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .radio .radio-btn {
+    margin: 0 auto 1vh !important;
+    position: relative;
+    right: 1vw;
+    width: 25px;
+    height: 25px;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .change-list-map {
+    flex-direction: column-reverse;
+    position: absolute;
+    bottom: 1vh;
+    right: 0;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .form-control {
+    margin-bottom: 1vh !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .input-list-wrapper, .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card-form, .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .list-map, .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .quote-card {
+    min-width: unset;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .button {
+    margin-bottom: 0 !important;
+    padding-top: 2vh;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .button .btn {
+    margin-bottom: 2vh;
+    padding: 1vh 4vw;
+    top: unset;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .list-map .item-card {
+    min-width: auto;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .list-map .store-zip {
+    padding: 0 1vw;
+  }
+  .widget-wrapper .book-appointment {
+    top: 5vh !important;
+  }
+  .widget-wrapper .book-appointment .typeWrapper {
+    padding: 0 !important;
+  }
+  .widget-wrapper .book-appointment .typeWrapper .selected-store-tittle {
+    padding: 2vw;
+  }
+  .widget-wrapper .book-appointment .appointment-details {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .widget-wrapper .book-appointment .appointment-details .appointment-date {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .widget-wrapper .book-appointment .appointment-details .appointment-date .zabuto-calendar {
+    width: 65vw !important;
+  }
+  .widget-wrapper .book-appointment .appointment-details .appointment-date .time-wrapper {
+    width: auto !important;
+  }
+  .widget-wrapper .book-appointment .appointment-details .appointment-date h6 {
+    padding-top: 3vh;
+  }
+  .widget-wrapper .book-appointment .appointment-details .appointment-store {
+    margin: 3vh 1vw;
+    width: unset !important;
+    height: unset !important;
+  }
+  .widget-wrapper .book-appointment .appointment-details .appointment-store .selected-store {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: inherit;
+  }
+  .widget-wrapper .book-appointment .appointment-details .appointment-store .selected-store .store-name {
+    padding: 0 2vw;
+  }
+  .widget-wrapper .book-appointment .appointment-details .appointment-store .selected-store .store-zip p {
+    width: 25vw;
+  }
+  .widget-wrapper .book-appointment .appointment-details .appointment-store .selected-store .change-appointment-btn {
+    padding-bottom: 2vh;
+  }
+  .widget-wrapper .typeWrapper .container .row .button {
+    margin: 2vh 4vw 0 0 !important;
+  }
+  .widget-wrapper .typeWrapper .container .row .button .btn {
+    top: 10px;
+    padding: 8px 20px;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details .device-name {
+    font-size: 3vw;
+  }
+  .widget-wrapper .typeWrapper .container .row .input-list-wrapper .zip-code .map-title span {
+    font-size: 2.7vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .hidden-row-wrapper {
+    height: auto;
+    max-height: unset;
+    padding-right: 0;
+  }
+  .widget-wrapper .book-appointment .book-appointment-btn {
+    padding: 0 28px 43px;
+    justify-content: center !important;
+  }
+  .widget-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-img img {
+    min-width: 15vw;
+  }
+  .widget-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-details .store-zip {
+    width: 25vw;
+  }
+  .widget-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-details .button {
+    padding-top: 0;
+  }
+}
+@media screen and (max-width: 688px) {
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container {
+    left: unset;
+    transform: unset;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .hidden-row-wrapper {
+    max-height: unset;
+  }
+  .appointment-store {
+    display: flex;
+    width: 30vw !important;
+    justify-content: center;
+  }
+  .appointment-store .selected-store {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 575px) {
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .list-map-btn img {
+    width: 5vw !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .col {
+    position: relative;
+  }
+  .widget-wrapper .widget-stepper-wrapper .col .list-map {
+    padding: 1vh !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .col .list-map .row {
+    width: -webkit-fill-available !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .col .list-map .item-card {
+    overflow: visible !important;
+    flex-direction: unset !important;
+    height: 18vh;
+  }
+  .widget-wrapper .widget-stepper-wrapper .col .list-map .item-card .store-img {
+    width: 30vw !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .col .list-map .item-card .store-img img {
+    max-width: 20vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .col .list-map .store-name {
+    padding: 0 2vw !important;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    width: -webkit-fill-available;
+    margin: 0.5vh 0;
+  }
+  .widget-wrapper .widget-stepper-wrapper .col .list-map .store-name h5 {
+    margin: 0 !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .col .list-map .store-name h5 {
+    font-size: 3.5vw !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .col .list-map .store-zip {
+    width: 45vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .col .list-map .store-zip p {
+    margin: 0;
+    font-size: 3.4vw;
+  }
+  .widget-wrapper .book-appointment .typeWrapper .appointment-details .appointment-store .selected-store .store-zip p {
+    width: 45vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper {
+    text-align: center;
+    flex-direction: column;
+    min-width: unset !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-zip {
+    width: auto;
+  }
+}
+@media screen and (max-width: 430px) {
+  #send-quote-button {
+    text-align: center;
+  }
+  .quote-information {
+    padding: 4vh 0 2vh !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper {
+    padding: 15px 1vw 1vh;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container {
+    padding: 0 0 0 2vw !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .hidden-row-wrapper {
+    margin-bottom: 0;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details {
+    padding: 10px 10px 5px !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-img img {
+    width: 25vw !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-details .change-store-btn {
+    display: none;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-details .store-zip {
+    width: 100% !important;
+    font-size: 3.3vw !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-details .btn {
+    padding: 5px 20px;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details .device .device-wrapper .device-img img {
+    width: 25vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details .device .device-wrapper .device-name {
+    font-size: 4vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .problem .problem-wrapper .problem-card .item-card .problem-type {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .problem .problem-wrapper .problem-card .item-card .problem-type .col-img img {
+    width: 11vw !important;
+    object-fit: scale-down;
+    height: 5vh;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .problem .problem-wrapper .problem-card .item-card .problem-type .col-name span {
+    font-size: 2.8vw !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .problem .problem-wrapper .problem-card .item-card .option h5, .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .item-card .problem .problem-wrapper .problem-card .item-card .option span {
+    font-size: 2.5vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .hidden-row {
+    padding-right: 0;
+    margin-right: -2vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .col-name {
+    padding: 0 0 0 10px !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .col-name span {
+    font-size: 4vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .col-img .view-list-img, .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .col-img .view-map-img {
+    width: 5vw !important;
+    height: 5vw !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .col-img img {
+    width: 20vw;
+    object-fit: scale-down;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .quote-delivery-title {
+    padding: 1vh 0 !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .quote-delivery-title h6 {
+    font-size: 5vw !important;
+    font-weight: 500 !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .form-quote {
+    padding-top: 1vh !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .form-quote .row {
+    margin-bottom: unset !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .form-quote .row .btn {
+    top: unset;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .radio label {
+    font-size: 3vw;
+    flex-direction: column;
+    align-items: center;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .radio-btn {
+    margin-bottom: 1vh;
+    width: 6vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .zip-code .map-title {
+    padding: 1vh 0;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .zip-code .map-title span {
+    font-size: 3vw !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .zip-code .input-zip-code input {
+    padding: 1vh 5px !important;
+    font-size: 3vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .change-list-map {
+    bottom: 0;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .store-list-wrapper {
+    --bs-gutter-y: 1vh;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .store-list-wrapper .store-list-card {
+    height: 14vh;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .radio-button-wrapper {
+    justify-content: space-between;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .radio-button-wrapper .radio {
+    text-align: center;
+    max-width: 17vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .radio-button-wrapper .radio .radio-btn {
+    margin: 0 auto 1vh;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .store-list-card .store-zip {
+    padding: 3vh 0 0;
+  }
+  .widget-wrapper .widget-stepper-wrapper .type-map {
+    padding: 0 1vw;
+  }
+  .widget-wrapper .book-appointment .appointment-details {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .widget-wrapper .book-appointment .change-appointment-btn .btn {
+    width: 120px !important;
+    height: 38px !important;
+  }
+  .widget-stepper .stepper-item .back-button {
+    top: 8px;
+    padding: 0 2px;
+  }
+  .widget-stepper .widget-stepper-wrapper {
+    max-width: 95vw;
+  }
+  .widget-stepper .widget-stepper-wrapper .title-wrapper {
+    padding: 2vh 0 7vh;
+  }
+  .widget-stepper .widget-stepper-wrapper .title-wrapper .step-name {
+    white-space: unset;
+    font-size: 2.5vw;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 45px;
+    text-align: center;
+  }
+  .widget-wrapper .success-block .success-block-wrapper {
+    padding: 5vh 0 2vh;
+  }
+  .widget-wrapper .success-block .success-block-wrapper .main-img img {
+    width: 40vw;
+  }
+  .widget-wrapper .success-block .success-block-wrapper .message {
+    width: 60vw;
+  }
+  .widget-wrapper .success-block .success-block-wrapper .message p {
+    font-size: 3vw;
+  }
+  .widget-wrapper .success-block .success-block-wrapper .appointment-details h4 {
+    font-size: 3vw;
+  }
+  .widget-wrapper .success-block .success-block-wrapper .store-name {
+    padding-top: 1.5vh;
+  }
+  .widget-wrapper .success-block .success-block-wrapper .date h3 {
+    font-size: 3vw;
+    margin-bottom: 1vh;
+  }
+  .widget-wrapper .success-block .success-block-wrapper .store-zip p {
+    font-size: 3vw;
+  }
+  .widget-wrapper .book-appointment .title-wrapper .tittle h2 {
+    font-size: 4vw;
+  }
+}
+@media screen and (max-width: 375px) {
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-details .btn {
+    font-size: 4vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .form-quote .row .btn {
+    font-size: 4vw;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .button .btn {
+    font-size: 4vw;
+  }
+  .widget-wrapper .typeWrapper .list-map-btn {
+    width: 30px;
+    height: 33px;
+  }
+  .appointment-btn .btn, .no-btn .btn {
+    font-size: 3vw !important;
+  }
+  .selected-store .change-appointment-btn button {
+    font-size: 3vw;
+    width: 28vw !important;
+    height: 3vh !important;
+  }
+  .device-name span {
+    font-size: 5vw;
+  }
+}
+@media screen and (max-width: 320px) {
+  .widget-wrapper .typeWrapper .container .row .item-card {
+    padding: 1vh 3vw !important;
+  }
+  .widget-wrapper .typeWrapper .container .row .item-card .col-name {
+    white-space: unset;
+    text-align: start;
+  }
+  .widget-wrapper .typeWrapper .container .row .item-card .col-name span {
+    font-size: 5vw;
+  }
+  .widget-stepper-wrapper .title-wrapper .step-name {
+    font-size: 3vw !important;
+  }
+  .widget-stepper-wrapper .typeWrapper .input-list-wrapper {
+    padding: 0 !important;
+  }
+  .widget-stepper-wrapper .typeWrapper .item-card .col-img img {
+    width: 15vw !important;
+    height: 15vw !important;
+  }
+  .widget-stepper-wrapper .typeWrapper .item-card .zip-code .map-title {
+    padding: 0 0 2vh !important;
+  }
+  .widget-stepper-wrapper .typeWrapper .item-card .map-title span {
+    font-size: 3vw;
+  }
+  .widget-stepper-wrapper .typeWrapper .item-card .change-list-map span {
+    font-size: 3vw !important;
+  }
+  .widget-stepper-wrapper .typeWrapper .item-card .details .device-img img {
+    width: 35vw !important;
+  }
+  .widget-stepper-wrapper .typeWrapper .item-card .details .device-name span {
+    font-size: 5vw !important;
+  }
+  .widget-stepper-wrapper .type-map, .widget-stepper-wrapper .type-form {
+    padding-top: 2vh !important;
+  }
+  .widget-stepper-wrapper .list-map .store-zip p {
+    font-size: 3.5vw;
+  }
+  .widget-stepper-wrapper .list-map .store-name h5 {
+    font-size: 3.5vw !important;
+  }
+  .problem-wrapper {
+    flex-wrap: unset !important;
+  }
+  .problem-wrapper .option h5, .problem-wrapper .option span {
+    font-size: 3vw !important;
+  }
+  .book-appointment .title-wrapper {
+    padding: 2vh 2vw !important;
+  }
+  .book-appointment .title-wrapper .tittle h2 {
+    font-size: 5vw;
+  }
+  .book-appointment .selected-store-tittle h4 {
+    font-size: 5vw;
+  }
+  .book-appointment .type-appointment {
+    padding: 1vh 5vw !important;
+  }
+  .book-appointment .appointment-details .appointment-date {
+    padding: 10px !important;
+  }
+  .book-appointment .appointment-details .appointment-date .time-of-appointment .title h6 {
+    padding-bottom: 10px !important;
+  }
+  .book-appointment .book-appointment-btn .no-btn {
+    margin: 0 10px !important;
+    padding: 5px 15px !important;
+  }
+  .success-block .success-block-wrapper .main-img img {
+    width: 30vw !important;
+  }
+  .success-block .success-block-wrapper .success-title h1 {
+    padding-top: 12px !important;
+  }
+  .success-block .success-block-wrapper .message {
+    width: 75vw !important;
+  }
+  .success-block .success-block-wrapper .message p {
+    font-size: 5vw !important;
+  }
+  .success-block .success-block-wrapper .appointment-details h4 {
+    font-size: 4vw !important;
+  }
+  .success-block .success-block-wrapper .date h3 {
+    font-size: 4vw !important;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
