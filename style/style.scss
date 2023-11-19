@@ -948,6 +948,9 @@ body{
     }
   }
 
+  .hidden-row{
+    scrollbar-width: none;
+  }
   ::-webkit-scrollbar {
     -webkit-appearance: none;
     // width: 7px;

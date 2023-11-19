@@ -167,22 +167,6 @@ console.log('enable scroll');
         });
     });
 
-
-
-
-
-    
-//     console.log('small');
-//     var instance = $('.hidden-row-wrapper').overlayScrollbars({ }).overlayScrollbars();
-// instance.destroy();
-
-    // var instance = OverlayScrollbars(document.querySelector(".hidden-row-wrapper"), {});
-    // if ($(window).width() < 768) {
-    //     console.log('large');
-    //     instance.destroy();
-    
-    //   }
-
 }
 
 // $(window).on('resize', function() {
