@@ -975,7 +975,7 @@ body {
     max-height: unset !important;
     height: fit-content;
     overflow: visible;
-    padding-right: 1vw;
+    padding-right: 3vw;
   }
   .widget-wrapper .widget-stepper-wrapper .typeWrapper .container {
     height: auto;
@@ -1150,19 +1150,22 @@ body {
   .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .hidden-row-wrapper {
     height: auto;
     max-height: unset;
-    padding-right: 0;
+    padding-right: 3vw;
   }
   .widget-wrapper .book-appointment .book-appointment-btn {
     padding: 0 28px 43px;
     justify-content: center !important;
   }
-  .widget-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-img img {
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .col-name span {
+    font-size: 15px;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-img img {
     min-width: 15vw;
   }
-  .widget-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-details .store-zip {
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-details .store-zip {
     width: 25vw;
   }
-  .widget-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-details .button {
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .container .row .item-card .details .store .store-wrapper .store-details .button {
     padding-top: 0;
   }
 }
@@ -1338,10 +1341,10 @@ body {
     width: 6vw;
   }
   .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .zip-code .map-title {
-    padding: 1vh 0;
+    padding: 1vh 0 2vh;
   }
   .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .zip-code .map-title span {
-    font-size: 3vw !important;
+    font-size: 3.3vw !important;
   }
   .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .zip-code .input-zip-code input {
     padding: 1vh 5px !important;
@@ -1367,7 +1370,11 @@ body {
     margin: 0 auto 1vh;
   }
   .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .store-list-card .store-zip {
-    padding: 3vh 0 0;
+    padding: 3vh 0 0 !important;
+  }
+  .widget-wrapper .widget-stepper-wrapper .typeWrapper .item-card .store-list-card .store-img {
+    position: relative;
+    top: 1vh;
   }
   .widget-wrapper .widget-stepper-wrapper .type-map {
     padding: 0 1vw;
